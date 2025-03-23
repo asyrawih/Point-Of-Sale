@@ -1,5 +1,5 @@
-
-use tauri::{Manager, Window};
+use tauri::{Manager, Window, plugin::{Builder, TauriPlugin}};
+use tauri::Wry;
 
 #[tauri::command]
 pub fn minimize_window(app_handle: Window) {
@@ -21,4 +21,10 @@ pub fn maximize_window(app_handle: Window) {
     }else {
         window.maximize().unwrap();
     }
+}
+
+pub fn register() -> TauriPlugin<Wry> {
+    Builder::<Wry>::new("commands")
+        .invoke_handler(tauri::generate_handler![minimize_window, close_window, maximize_window])
+        .build()
 }
