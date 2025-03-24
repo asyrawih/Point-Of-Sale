@@ -44,6 +44,13 @@ const menuItems = [
     price: 250000,
     image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=500&auto=format&fit=crop',
     category: 'Cake'
+  },
+  {
+    id: 7,
+    name: 'Just Cake',
+    price: 250000,
+    image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=500&auto=format&fit=crop',
+    category: 'Cake'
   }
 ];
 

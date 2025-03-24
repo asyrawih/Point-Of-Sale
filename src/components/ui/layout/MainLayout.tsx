@@ -1,18 +1,18 @@
 import { AppTitleBar } from '../menu/AppTitleBar';
-import { MenuGrid } from '../menu/MenuGrid';
-import { OrderPanel } from './OrderPanel';
 import { Sidebar } from './Sidebar';
+import { ReactNode } from 'react';
 
-export const MainLayout = () => {
+interface MainLayoutProps {
+    children?: ReactNode;
+}
+
+export const MainLayout = ({ children }: MainLayoutProps) => {
     return (
         <div className="h-screen flex flex-col">
             <AppTitleBar />
             <div className="flex-1 flex">
                 <Sidebar />
-                <div className="flex-1 overflow-y-auto">
-                    <MenuGrid />
-                </div>
-                <OrderPanel />
+                {children}
             </div>
         </div>
     );
